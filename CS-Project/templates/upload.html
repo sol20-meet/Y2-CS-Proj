@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<!--
+	Epilogue by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<style>
+			.arrow_back {
+				width:60px;
+				padding-left:25px;
+				padding-top: 25px;
+			}
+			#imp{background-image: url("static/images/bg33.jpg");background-repeat: no-repeat;}
+			
+
+		</style>
+		<title>TravelHub - Upload</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}" />
+	</head>
+	<body id="imp">
+
+		<a href="index.html"><div><img class="arrow_back" src="static/images/arrow_back.png"></div></a> 
+		<center>
+		<img class="logo_upload" src="static/images/logo.png">
+		</center>
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<div class="upload_items">
+				<!-- Banner -->
+					<section id="intro" class="main">
+					
+						<h5>Here You Can Upload Your Story for other people to see, you can add some images if you want to do so.
+						You can Write Your Story and Your Adventures in the form below.</h5>
+						Name Of The Place :
+						<br>
+						<form action="{{url_for('upload')}}" method="POST">
+						<input type="text" placeholder="Name Of The Place" name="nameOfplace">
+						<br>
+						Decription :
+						<textarea id="subject" name="subject" placeholder="Talk About Your Experience!" style="height:200px"></textarea>
+						<br>
+						Name :
+						<input type="text" placeholder="Your Name" name="Date">
+						<br>
+						Image Link :
+						<input type="text" placeholder="Link" name="Link">
+						<br><br>
+						<ul class="actions">
+							<input type="Submit" name="Submit" class="button big">
+						
+						</ul>
+					</form>
+					</section>
+				</div>
+
+	
+
+				
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<p class="copyright">&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="static/js/jquery.min.js"></script>
+			<script src="static/js/skel.min.js"></script>
+			<script src="static/js/util.js"></script>
+			<script src="static/js/main.js"></script>
+
+	</body>
+</html>

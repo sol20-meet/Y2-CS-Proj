@@ -1,6 +1,7 @@
-#from database import *
+from database import *
 from flask import Flask, request, redirect, render_template
 from flask import session as login_session
+from model import *
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'you-will-never-guess'
@@ -14,6 +15,34 @@ def home():
 def NewHome():
 	return home()
 
+@app.route('/about.html')
+def About():
+	return render_template('about.html')
+
+@app.route('/upload.html' , methods=['GET','POST'])
+def upload():
+	if request.method == 'GET' :
+		return render_template('upload.html')
+	else:
+		print("creating object")
+		name_of_place = request.form['nameOfplace']
+		description = request.form['subject']
+		date_of_visit = request.form['Date']
+		link = request.form['Link']
+
+		add_place(name_of_place , description , date_of_visit , link)
+		return redirect('index.html')
+
+
+@app.route('/list.html')
+def fullList():
+	places=query_all()
+	return render_template('list.html',places=places)
+
+@app.route('/place.html/<int:p_id>')
+def place(p_id):
+	place=session.query(Place).filter_by(id=p_id).one()
+	return render_template('place.html',place=place)
 
 # @app.route('/blog.html',methods=["GET","POST"])
 # def blog():
